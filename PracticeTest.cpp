@@ -77,4 +77,14 @@ TEST(PracticeTest, is_not_palindrome_with_numbers)
 	bool actual = obj.isPalindrome("01010");
 	ASSERT_TRUE(actual);
 }
-//Check spaces. 
+
+TEST(PracticeTest, sort_first_second)
+{
+	Practice obj;
+	int first = 2;
+	int second = 3;
+	int third = 1;
+	obj.sortDescending(first, second, third);
+	ASSERT_GE(first, second);
+	ASSERT_GE(second, third);
+}
