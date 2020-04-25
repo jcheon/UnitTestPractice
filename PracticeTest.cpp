@@ -49,4 +49,32 @@ TEST(PracticeTest, is_simple_palindrome_with_spaces)
 	ASSERT_TRUE(actual);
 }
 
+TEST(PracticeTest, is_simple_palindrome_with_one_space)
+{
+	Practice obj;
+	bool actual = obj.isPalindrome(" ");
+	ASSERT_TRUE(actual);
+}
+
+TEST(PracticeTest, is_palindrome_with_capital)
+{
+	Practice obj;
+	bool actual = obj.isPalindrome("Aa");
+	ASSERT_TRUE(actual);
+}
+
+TEST(PracticeTest, is_palindrome_with_numbers)
+{
+	Practice obj;
+	bool actual = obj.isPalindrome("01010");
+	ASSERT_TRUE(actual);
+}
+
+
+TEST(PracticeTest, is_not_palindrome_with_numbers)
+{
+	Practice obj;
+	bool actual = obj.isPalindrome("01010");
+	ASSERT_TRUE(actual);
+}
 //Check spaces. 
