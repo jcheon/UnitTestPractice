@@ -48,3 +48,5 @@ TEST(PracticeTest, is_simple_palindrome_with_spaces)
 	bool actual = obj.isPalindrome("a df fd a");
 	ASSERT_TRUE(actual);
 }
+
+//Check spaces. 
