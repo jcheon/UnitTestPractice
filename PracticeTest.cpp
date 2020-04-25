@@ -108,44 +108,7 @@ TEST(PracticeTest, sort_same_values)
 	ASSERT_GE(second, third);
 }
 
-// check if first and second values get changed to correct order
-TEST(PracticeTest, sort_first_second)
-{
-    Practice obj;
-		int first = 2;
-		int second = 3;
-		int third = 1;
-    obj.sortDescending(first, second, third);
-    ASSERT_GE(first,second);
-		ASSERT_GE(second,third);
-}
-
-// check if second and third values get changed to correct order
-TEST(PracticeTest, sort_second_third)
-{
-    Practice obj;
-		int first = 3;
-		int second = 1;
-		int third = 2;
-    obj.sortDescending(first, second, third);
-    ASSERT_GE(first,second);
-		ASSERT_GE(second,third);
-}
-
-// check if sorted correctly with repeat values
-TEST(PracticeTest, sort_with_equal_values)
-{
-    Practice obj;
-		int first = 1;
-		int second = 3;
-		int third = 1;
-    obj.sortDescending(first, second, third);
-    ASSERT_GE(first,second);
-		ASSERT_GE(second,third);
-}
-
-// check if values originally in opposite order get sorted correctly
-TEST(PracticeTest, sort_backwards)
+TEST(PracticeTest, sort_opposite)
 {
     Practice obj;
 		int first = 1;
@@ -153,7 +116,7 @@ TEST(PracticeTest, sort_backwards)
 		int third = 3;
     obj.sortDescending(first, second, third);
     ASSERT_GE(first,second);
-		ASSERT_GE(second,third);
+	ASSERT_GE(second,third);
 }
 
 // check if negative values get sorted correctly
@@ -165,7 +128,7 @@ TEST(PracticeTest, sort_negative)
 		int third = -1;
     obj.sortDescending(first, second, third);
     ASSERT_GE(first,second);
-		ASSERT_GE(second,third);
+	ASSERT_GE(second,third);
 }
 
 // check if negative, positive, zero gets sorted correctly
