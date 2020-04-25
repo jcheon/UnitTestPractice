@@ -49,6 +49,13 @@ TEST(PracticeTest, is_simple_palindrome_with_spaces)
 	ASSERT_TRUE(actual);
 }
 
+TEST(PracticeTest, is_not_simple_palindrome_with_spaces)
+{
+	Practice obj;
+	bool actual = obj.isPalindrome("a fd fd a");
+	ASSERT_FALSE(actual);
+}
+
 TEST(PracticeTest, is_simple_palindrome_with_one_space)
 {
 	Practice obj;
@@ -78,7 +85,7 @@ TEST(PracticeTest, is_not_palindrome_with_numbers)
 	ASSERT_TRUE(actual);
 }
 
-TEST(PracticeTest, sort_first_second)
+TEST(PracticeTest, sort_first__and_second)
 {
 	Practice obj;
 	int first = 2;
@@ -87,4 +94,88 @@ TEST(PracticeTest, sort_first_second)
 	obj.sortDescending(first, second, third);
 	ASSERT_GE(first, second);
 	ASSERT_GE(second, third);
+}
+
+TEST(PracticeTest, sort_same_values)
+{
+	Practice obj;
+	int first, second, third;
+	first = 1;
+	second = 2;
+	third = 1;
+	obj.sortDescending(first, second, third);
+	ASSERT_GE(first, second);
+	ASSERT_GE(second, third);
+}
+
+// check if first and second values get changed to correct order
+TEST(PracticeTest, sort_first_second)
+{
+    Practice obj;
+		int first = 2;
+		int second = 3;
+		int third = 1;
+    obj.sortDescending(first, second, third);
+    ASSERT_GE(first,second);
+		ASSERT_GE(second,third);
+}
+
+// check if second and third values get changed to correct order
+TEST(PracticeTest, sort_second_third)
+{
+    Practice obj;
+		int first = 3;
+		int second = 1;
+		int third = 2;
+    obj.sortDescending(first, second, third);
+    ASSERT_GE(first,second);
+		ASSERT_GE(second,third);
+}
+
+// check if sorted correctly with repeat values
+TEST(PracticeTest, sort_with_equal_values)
+{
+    Practice obj;
+		int first = 1;
+		int second = 3;
+		int third = 1;
+    obj.sortDescending(first, second, third);
+    ASSERT_GE(first,second);
+		ASSERT_GE(second,third);
+}
+
+// check if values originally in opposite order get sorted correctly
+TEST(PracticeTest, sort_backwards)
+{
+    Practice obj;
+		int first = 1;
+		int second = 2;
+		int third = 3;
+    obj.sortDescending(first, second, third);
+    ASSERT_GE(first,second);
+		ASSERT_GE(second,third);
+}
+
+// check if negative values get sorted correctly
+TEST(PracticeTest, sort_negative)
+{
+    Practice obj;
+		int first = -3;
+		int second = -2;
+		int third = -1;
+    obj.sortDescending(first, second, third);
+    ASSERT_GE(first,second);
+		ASSERT_GE(second,third);
+}
+
+// check if negative, positive, zero gets sorted correctly
+TEST(PracticeTest, sort_pos_zero_neg)
+{
+    Practice obj;
+		int first = 3;
+		int second = 0;
+		int third = -2;
+    obj.sortDescending(first, second, third);
+    ASSERT_GE(first,second);
+		ASSERT_GE(second,third);
 }
